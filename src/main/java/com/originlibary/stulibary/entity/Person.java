@@ -1,6 +1,7 @@
 package com.originlibary.stulibary.entity;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -11,6 +12,7 @@ import java.util.Map;
  * 将配置文件的每一个属性值，映射到这个组件中
  *@ConfigurationProperties 告诉springboot将组件的属性和配置文件的值进行绑定
  */
+@PropertySource(value = "classpath:person.properties")
 @Component
 @ConfigurationProperties(prefix = "person")
 public class Person {
